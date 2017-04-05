@@ -12,6 +12,8 @@ gem 'rails', '~> 5.0.2'
 gem "devise"
 gem "bootstrap-sass"
 gem "simple_form"
+gem "carrierwave"
+gem "mini_magick"
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
