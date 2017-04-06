@@ -16,6 +16,7 @@ gem "carrierwave"
 gem "mini_magick"
 gem "font-awesome-rails"
 gem "aasm"
+gem 'omniauth-facebook'
 
 
 # Use sqlite3 as the database for Active Record
