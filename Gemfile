@@ -15,6 +15,7 @@ gem "simple_form"
 gem "carrierwave"
 gem "mini_magick"
 gem "font-awesome-rails"
+gem "aasm"
 
 
 # Use sqlite3 as the database for Active Record
