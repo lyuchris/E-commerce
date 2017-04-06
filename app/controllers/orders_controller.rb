@@ -7,12 +7,19 @@ class OrdersController < ApplicationController
     if @order.save
       @order.build_item_cache_from_cart(current_cart)
       @order.calculate_total!(current_cart)
-      redirect_to order_path(@order)
+      redirect_to order_path(@order.token)
     else
       render "carts/checkout"
     end
   end
 
+  def show
+    @order = Order.find_by_token(params[:id])
+    @order_info = @order.info
+    @order_items = @order.items
+  end
+
+ 
   private
 
   def order_params
@@ -22,18 +29,5 @@ class OrdersController < ApplicationController
                                                     :shipping_address] )
   end
 
-  def build_item_cache_from_cart(cart)
-    cart.items.each do |cart_item|
-      item = items.build
-      item.product_name = cart_item.title
-      item.quantity = 1
-      item.price = cart_item.price
-      item.save
-    end
-  end
-
-  def calculate_total!(cart)
-    self.total = cart.total_price
-    self.save
-  end
+  
 end
