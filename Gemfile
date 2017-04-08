@@ -18,6 +18,10 @@ gem "font-awesome-rails"
 gem "aasm"
 gem 'omniauth-facebook'
 
+gem 'roadie'
+gem "letter_opener", group: :development
+
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
